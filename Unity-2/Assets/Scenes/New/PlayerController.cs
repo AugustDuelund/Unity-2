@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     // Start is called before the first frame update
+
+    Vector3 originalPos;
     void Start()
     {
 
@@ -102,4 +104,5 @@ public class PlayerController : MonoBehaviour
     {
         verticalVelocity = Mathf.Sqrt(jumpHeight*gravity);
     }
+
 }
