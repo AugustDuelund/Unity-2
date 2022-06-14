@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LavaLevel.unity
     guid: 9466890e999a8d9499ed3aaf3ef3a6bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: f21aaec8b79f1ef4fb98a76b49995649
+  - enabled: 1
+    path: Assets/Scenes/MazeLevel.unity
+    guid: 2cc1fd1ac01fe4bc2ac46dd02e4343f0
+  - enabled: 1
+    path: Assets/Scenes/SquidLevel.unity
+    guid: e00e9b185957441c3ad26a912fd13135
   m_configObjects: {}
