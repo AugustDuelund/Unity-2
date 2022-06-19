@@ -9,10 +9,4 @@ public class GoToFinish : MonoBehaviour
     {
         SceneManager.LoadScene("FinishLevel");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
