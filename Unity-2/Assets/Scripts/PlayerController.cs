@@ -7,19 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
 
-    private float moveSpeed = 1;
+    private float moveSpeed;
 
     [SerializeField]
 
-    private float lookSensitivity = 5;
+    private float lookSensitivity;
 
     [SerializeField]
 
-    private float jumpHeight = 10;
+    private float jumpHeight;
 
     [SerializeField]
 
-    private float gravity = 9.81f;
+    private float gravity;
 
     private Vector2 moveVector;
 
@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
-    // Start is called before the first frame update
+    
 
     Vector3 originalPos;
+    // Start is called before the first frame update
+    //Fetches our character controller and animator controller stuff
     void Start()
     {
 
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Calls movement functions once per frame
     void Update()
     {
 
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    //Animates movement
     public void OnMove(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
@@ -66,6 +70,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Calculates movement
     private void Move()
     {
 
@@ -80,17 +85,20 @@ public class PlayerController : MonoBehaviour
         characterController.Move(move*moveSpeed*Time.deltaTime);
     }
 
+    
     public void OnLook(InputAction.CallbackContext context)
     {
         lookVector = context.ReadValue<Vector2>();
     }
 
+    //Calculates camera/player turning/rotation
     private void Rotate()
     {
         rotation.y += lookVector.x*lookSensitivity*Time.deltaTime;
         transform.localEulerAngles = rotation;
     }
 
+    //Plays jump animation and calls jump function.
     public void OnJump(InputAction.CallbackContext context)
     {
         if(characterController.isGrounded && context.performed)
@@ -100,6 +108,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Jump function, calculates player jump height.
     private void Jump()
     {
         verticalVelocity = Mathf.Sqrt(jumpHeight*gravity);

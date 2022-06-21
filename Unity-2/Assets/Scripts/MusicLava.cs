@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class MusicLava : MonoBehaviour
 {
     public static MusicLava instance;
+    
+    //Awake is run when object is instantiated
+    //Singleton that prevents music from being stopped/restarted when loading same level also prevents duplicates of the object.
     void Awake()
     {
         if (instance == null)
@@ -25,6 +28,7 @@ public class MusicLava : MonoBehaviour
     }
 
     // Update is called once per frame
+    //If statement to destroy object when leaving scene/level.
     void Update()
     {
         if(SceneManager.GetActiveScene().name != "LavaLevel")

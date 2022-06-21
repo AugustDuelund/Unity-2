@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string lavaLevel;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +17,7 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    //Start game.
     public void StartGame()
     {
         SceneManager.LoadScene("LavaLevel");
@@ -39,6 +38,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SquidLevel");
     }
 
+    //Only works when its an application, doesnt work in editor stuff.
     public void QuitGame()
     {
         Application.Quit();
