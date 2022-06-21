@@ -6,6 +6,7 @@ TagManager:
   tags:
   - End
   - Platform
+  - GameMusic
   layers:
   - Default
   - TransparentFX
